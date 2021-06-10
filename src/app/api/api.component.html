@@ -1,0 +1,57 @@
+<br>
+<div class="container ">
+    <div class="row">
+        <div class=" col-3" *ngFor="let emp of emps ">
+            <div class="w-auto shadow-lg" id="pos">
+                <div class="card">
+                    <div class="card-body ">
+                        <img src={{emp.avatar}} alt=".." height="150" width="150">
+                        <p><b>_id :</b>{{emp._id}}</p>
+                        <p><b>Email :</b>{{emp.email}}</p>
+                        <p><b>first_name :</b> {{emp.first_name}}</p>
+                        <p><b>last_name :</b> {{emp.last_name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<h3 class="m-5">posting data to api</h3>
+
+<form class="m-5" #userdata="ngForm" (ngSubmit)="onSubmit(userdata.value)">
+    <div class="form-group w-50 ">
+        <input class="form-control" type="text" name="first_name" ngModel placeholder="first_name">
+        <input class="form-control" type="text" name="last_name" ngModel placeholder="last_name">
+        <input class="form-control" type="text" name="email" ngModel placeholder="email">
+        <input class="form-control" type="text" name="avatar" ngModel placeholder="avatar"><br>
+        <button class="btn btn-primary" type="submit">submit</button>
+    </div>
+</form>
+<hr>
+<br><br>
+<h3 class="m-5">Search by Id</h3>
+
+<form class="d-flex w-50 m-5" #searchid="ngForm" (ngSubmit)="onSearch(searchid.value)">
+    <input class="form-control me-2" type="search" placeholder="Search by Id" name="_id" aria-label="Search"
+        [(ngModel)]="id">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+</form><br><br>
+<div class="container">
+    <div class="row">
+        <div class=" col-12" *ngIf="single ">
+            <div class="w-auto shadow-lg" id="pos">
+                <div class="card">
+                    <div class="card-body ">
+                        <img src={{single.avatar}} alt=".." height="150" width="150">
+                        <p><b>_id :</b>{{single._id}}</p>
+                        <p><b>Email :</b>{{single.email}}</p>
+                        <p><b>first_name :</b> {{single.first_name}}</p>
+                        <p><b>last_name :</b> {{single.last_name}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><br><br>
+<hr>

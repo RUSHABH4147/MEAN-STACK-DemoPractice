@@ -1,0 +1,10 @@
+img{
+    object-fit: cover;
+    border: 3px slategray solid;
+}
+.container{
+    height: 110vh;
+}
+p{
+    margin: 0;
+}

@@ -1,0 +1,10 @@
+#pos{
+    text-align: center;
+}
+
+.container{
+    height: 90vh;
+}
+img{
+    object-fit: scale-down;
+}

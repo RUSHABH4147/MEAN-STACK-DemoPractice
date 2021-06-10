@@ -1,0 +1,27 @@
+<div class="card w-75">
+    <div class="card-header">
+        <h1>calci</h1>
+    </div>
+    <div class="card-body">
+        <div class="form-group d-flex flex-row">
+            <input [(ngModel)] ='num1' type="number"  name="num1" class="form-control">
+            <input [(ngModel)] ='num2' type="number"  name="num2" class="form-control">
+            <input ngModel type="number"  name="num" #demo=ngModel (change)="log(demo)" class="form-control">
+        </div>
+        <div class="btn">
+            <button class="btn btn-success" (click)="add()">SUM</button>
+        </div>
+        <div class="btn">
+            <button class="btn btn-success" (click)="sub()">sub</button>
+        </div>
+        <div class="btn">
+            <button class="btn btn-success" (click)="mult()">Multi</button>
+        </div>
+        <div class="btn">
+            <button class="btn btn-success" (click)="div()">div</button>
+        </div>
+    </div>
+    <div class="card-footer">
+        <p>1) {{num1 }} and 2) {{num2}} <br><span>result is {{result}} </span> </p>
+    </div>
+</div>

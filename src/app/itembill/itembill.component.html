@@ -1,0 +1,58 @@
+<div class="container w-50">
+    <div class="card">
+        <div class="card-header">
+            <h4>Item-Bill</h4>
+        </div>
+        <div class="card-body">
+            <form  #billdata="ngForm" (ngSubmit)="postbill(billdata.value)">
+            <div  class="form-group w-50 ">
+                <label for="qty">Customer_Name:</label>
+                <input ngModel type="text" name="customer_name" id="customer_name" class="form-control w-75">
+               <label for="item">Select-Item:</label>
+                <select  class="form-select" aria-label="Default select example" (change)="oneitem()" [(ngModel)]="item" name="item">
+                    <option *ngFor="let item of items" value={{item.item_name}}>{{item.item_name}}</option>
+                  </select>
+            </div>
+            <div class=" form-group  ">
+                <p *ngFor="let one of singleitem"><b>Price:{{one.price}}/-</b></p>
+                <label for="qty">qty:</label>
+                <input [(ngModel)]="qty" type="number" name="qty" id="qty" class="form-control w-50">
+            </div>
+            <BUtton class="btn btn-primary" type="submit" (click)="getbill()">getbill</BUtton>
+        </form>
+        </div>
+        <div class="card-footer">
+            <h6>Total: {{total}}/-</h6>
+            <h6>DISCOUNT : {{dis}}/-</h6>
+            <h6><b>Net.price : {{netprice}}/- </b></h6>
+        </div>
+        <div *ngFor="let one of singleitem">
+            <img src={{one.avatar}} width="726" height="270" alt="..">
+        </div>
+    </div>
+</div><hr>
+
+<div class="container w-50">
+    <div class="card">
+        <div class="card-header">
+            <h4>Item-Bill</h4>
+        </div>
+        <div class="card-body">
+            <form #itemdata="ngForm" (ngSubmit)="onSubmit(itemdata.value)">
+            <div class="form-group w-50 ">
+                <label for="item">put-Item-name:</label>
+                <input ngModel type="text" name="item_name" id="item_name" class="form-control w-30">
+               <label for="item">put-Item-image:</label>
+               <input class="form-control" type="file"  name="avatar"  (change)="gotfile($event)"  >
+            </div>
+
+            <div class=" form-group  ">
+                <label for="price">price:</label>
+                <input ngModel type="number" name="price" id="price" class="form-control w-30">
+            </div>
+            <BUtton class="btn btn-primary" type="submit" >ADD</BUtton>
+        </form>
+        </div>
+        
+    </div>
+</div>

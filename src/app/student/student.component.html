@@ -1,0 +1,73 @@
+<br>
+<div class="container ">
+    <div class="row">
+        <div class=" col-3" *ngFor="let std of stds ">
+            <div class="w-auto shadow-lg" id="pos">
+            <div class="card">
+        <div class="card-body ">
+    <p ><b>ROLL.no :</b>{{std._id}}</p>
+    <p ><b>NAME :</b>{{std.name}}</p>
+    <img src={{std.avatar}} alt=".avatar." height="150" width="150">
+    <p><b>last_name :</b> {{std.last_name}}</p>
+    <p><b>TOTAL :</b> {{std.total}}</p>
+    <p><b>Grade :</b> {{std.grade}}</p>
+    <p><b>Percentage :</b> {{std.percentage}}%</p>
+    <p><b>RESULT : {{std.result}}</b></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr>
+<h3 class="m-5">posting data to api</h3>
+
+<form class="m-5" #userdata="ngForm" (ngSubmit)="onSubmit(userdata.value)">
+    <div class="form-group w-50 ">
+    <input class="form-control" type="text" name="name" ngModel placeholder="first_name"  ngModel >
+    <input class="form-control" type="text" name="last_name" ngModel placeholder="last_name"  ngModel>
+    <input class="form-control" type="file"  name="avatar"  (change)="gotfile($event)"  >
+    <input class="form-control" type="number" name="English" ngModel placeholder="English"  [(ngModel)]="English">
+    <input class="form-control" type="number" name="Phy" ngModel placeholder="Phy"  [(ngModel)]="Phy">
+    <input class="form-control" type="number" name="chem" ngModel placeholder="chem"  [(ngModel)]="chem">
+    <input class="form-control" type="number" name="Maths" ngModel placeholder="Maths"  [(ngModel)]="Maths">
+    <input class="form-control" type="number" name="history" ngModel placeholder="history"  [(ngModel)]="history">
+    <br>
+    <button class="btn btn-primary" type="submit">submit</button>
+</div>
+</form>
+<hr>
+<br><br>
+<h3 class="m-5">Search by Roll.no</h3>
+
+<form class="d-flex w-50 m-5" #searchid="ngForm" (ngSubmit)="onSearch()">
+    <input class="form-control me-2" type="search" placeholder="Search by roll.no" name="_id" aria-label="Search" [(ngModel)]="id">
+    <button class="btn btn-outline-success" type="submit">Search</button>
+  </form><br><br>
+  <div class="container">
+    <div class="row">
+        <div class=" col-12" *ngIf="single ">
+            <div class="w-auto shadow-lg" id="pos">
+            <div class="card">
+        <div class="card-body ">
+            <h1>Marksheet</h1>
+           <img src={{single.avatar}} alt=".avatar." height="150" width="150">
+            <p ><b>ROLL.no :</b>{{single._id}}</p>
+            <p ><b>Email :</b>{{single.name}}</p>
+            <p><b>last_name :</b> {{single.last_name}}</p>
+            <p><b>English :</b> {{single.English}}</p>
+            <p><b>PHYCICS :</b> {{single.Phy}}</p>
+            <p><b>Chemisry :</b> {{single.chem}}</p>
+            <p><b>Maths :</b> {{single.Maths}}</p>
+            <p><b>history :</b> {{single.history}}</p>
+            <p><b>TOTAL :</b> {{single.total}}</p>
+            <p><b>Grade :</b> {{single.grade}}</p>
+            <p><b>Percentage :</b> {{single.percentage}}%</p>
+            <p><b>RESULT :</b> {{single.result}}%</p>
+        </div>
+</div>
+</div>
+</div>
+</div>
+</div><br><br>
+  <hr>
