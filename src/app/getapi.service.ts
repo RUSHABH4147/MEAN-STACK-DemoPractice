@@ -8,45 +8,83 @@ export class GetapiService {
   constructor( private http : HttpClient ) { 
 
   }
-  //get
+  // //get
+  // apigetcall(){
+  //  return this.http.get("http://localhost:5000/users")
+  // }
+  // //post
+  // apipostcall(data:any){
+  //   return this.http.post("http://localhost:5000/users/createuser",data)
+  //  }
+  //  //find by id
+  //  findbyid(data:any){
+  //   return this.http.get(`http://localhost:5000/users/${data}`)
+  //  }
+  //  getstudent(){
+  //   return this.http.get("http://localhost:5000/student")
+  //  }
+  //  //post
+  //  poststudent(data:any){
+  //    return this.http.post("http://localhost:5000/student/poststudent",data)
+  //   }
+  //   //find by id
+  //   findstudent(data:any){
+  //    return this.http.get(`http://localhost:5000/student/${data}`)
+  //   }
+
+  //   //post
+  //  postitem(data:any){
+  //   return this.http.post("http://localhost:5000/items/putitem",data)
+  //  }
+  //  //get
+  //  getitem(){
+  //    return this.http.get("http://localhost:5000/items")
+  //  }
+  //  //single item
+  //  fintitem(data:any){
+  //   return this.http.get(`http://localhost:5000/items/${data}`)
+  //  }
+  // //
+  //  postbill(data:any){ 
+  //   return this.http.post("http://localhost:5000/bill/postbill",data)
+  // }
   apigetcall(){
-   return this.http.get("http://localhost:5000/users")
-  }
-  //post
-  apipostcall(data:any){
-    return this.http.post("http://localhost:5000/users/createuser",data)
-   }
-   //find by id
-   findbyid(data:any){
-    return this.http.get(`http://localhost:5000/users/${data}`)
-   }
-   getstudent(){
-    return this.http.get("http://localhost:5000/student")
+    return this.http.get("https://temp-node-express-mongodb.herokuapp.com/users")
    }
    //post
-   poststudent(data:any){
-     return this.http.post("http://localhost:5000/student/poststudent",data)
+   apipostcall(data:any){
+     return this.http.post("https://temp-node-express-mongodb.herokuapp.com/users/createuser",data)
     }
     //find by id
-    findstudent(data:any){
-     return this.http.get(`http://localhost:5000/student/${data}`)
+    findbyid(data:any){
+     return this.http.get(`https://temp-node-express-mongodb.herokuapp.com/users/${data}`)
     }
-
+    getstudent(){
+     return this.http.get("https://temp-node-express-mongodb.herokuapp.com/student")
+    }
     //post
-   postitem(data:any){
-    return this.http.post("http://localhost:5000/items/putitem",data)
+    poststudent(data:any){
+      return this.http.post("https://temp-node-express-mongodb.herokuapp.com/student/poststudent",data)
+     }
+     //find by id
+     findstudent(data:any){
+      return this.http.get(`https://temp-node-express-mongodb.herokuapp.com/student/${data}`)
+     }
+ 
+     //post
+    postitem(data:any){
+     return this.http.post("https://temp-node-express-mongodb.herokuapp.com/items/putitem",data)
+    }
+    //get
+    getitem(){
+      return this.http.get("https://temp-node-express-mongodb.herokuapp.com/items")
+    }
+    //single item
+    fintitem(data:any){
+     return this.http.get(`https://temp-node-express-mongodb.herokuapp.com/items/${data}`)
+    }
+   //
+    postbill(data:any){ 
+     return this.http.post("https://temp-node-express-mongodb.herokuapp.com/bill/postbill",data)
    }
-   //get
-   getitem(){
-     return this.http.get("http://localhost:5000/items")
-   }
-   //single item
-   fintitem(data:any){
-    return this.http.get(`http://localhost:5000/items/${data}`)
-   }
-  //
-   postbill(data:any){ 
-    return this.http.post("http://localhost:5000/bill/postbill",data)
-  }
-   
 }
